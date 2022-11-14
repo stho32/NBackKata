@@ -1,0 +1,1 @@
+They are on opposite sides of the keyboard and are both "easy to feel" on the keyboard because they have bars. They are both controlled by different hands if the [[subject]] knows how to do 10 finger typing on a keyboard. This way the result should be less impacted by the user interface.

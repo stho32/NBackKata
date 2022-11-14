@@ -1,0 +1,1 @@
+How long shall the characters be presented? (in milliseconds)

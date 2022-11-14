@@ -1,0 +1,1 @@
+The result of the test can be given as a percentage, where the percentage represents the number of correct answers in the amount of possible answers.

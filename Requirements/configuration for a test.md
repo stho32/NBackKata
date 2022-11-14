@@ -1,0 +1,4 @@
+- Name of the [[subject]] 
+- n (1..9)
+- [[Stimulus duration]] 
+- Number of stimuli (10..100)
