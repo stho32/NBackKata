@@ -144,10 +144,3 @@ public class RunTestInteractor
     }
     #endregion
 }
-
-public interface ITimer
-{
-    void Configure(int timeIntervalInMilliseconds, Action callback);
-    void Start();
-    void Stop();
-}
