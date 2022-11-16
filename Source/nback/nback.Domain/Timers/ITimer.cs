@@ -1,4 +1,4 @@
-﻿namespace nback.Domain;
+﻿namespace nback.Domain.Timers;
 
 public interface ITimer
 {
