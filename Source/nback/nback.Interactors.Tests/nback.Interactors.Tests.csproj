@@ -12,4 +12,9 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\nback.Domain\nback.Domain.csproj" />
+    <ProjectReference Include="..\nback.Interactors\nback.Interactors.csproj" />
+  </ItemGroup>
+
 </Project>

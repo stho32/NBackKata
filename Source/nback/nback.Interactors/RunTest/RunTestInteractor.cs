@@ -15,7 +15,7 @@ public class RunTestInteractor
     private StreamOfAnswers _streamOfAnswers;
 
     public delegate void UiChangeNotification(RunTestDomainModel domainModel);
-    public event UiChangeNotification UIChangeNotification; 
+    public event UiChangeNotification? UiChangeNotificationEvent; 
 
     public RunTestInteractor(
         ConfigurationForTheTest configurationForTheTest,
@@ -34,7 +34,7 @@ public class RunTestInteractor
         string message)
     {
         return new RunTestDomainModel(
-            _currentStimulus.IsSuccess,
+            !_currentStimulus.IsSuccess,
             _currentStimulus.Value,
             _declarePatternARepetitionIsLoggedIn,
             _declarePatternIsNotARepetitonIsLoggedIn,
@@ -42,7 +42,7 @@ public class RunTestInteractor
             );
     }
 
-    private void Init()
+    public void Init()
     {
         _declarePatternARepetitionIsLoggedIn = false;
         _declarePatternIsNotARepetitonIsLoggedIn = false;
@@ -115,7 +115,7 @@ public class RunTestInteractor
 
     protected virtual void OnUiChangeNotification(RunTestDomainModel domainmodel)
     {
-        UIChangeNotification?.Invoke(domainmodel);
+        UiChangeNotificationEvent?.Invoke(domainmodel);
     }
     
     #region Timer Connection
