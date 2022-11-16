@@ -38,13 +38,23 @@ public class StreamOfAnswersTests
     [Test]
     public void When_the_second_stream_contains_less_answers_than_the_first_one_false_is_suggested()
     {
-        Assert.Fail();
+        var expectedAnswers = new StreamOfAnswers(new[] { true, false });
+        var subjectAnswers = new StreamOfAnswers(new bool[] { });
+
+        var matchingAnswers = expectedAnswers.CompareTo(subjectAnswers);
+        
+        Assert.AreEqual(new[] {false, false}, matchingAnswers);
     }
 
     [Test]
     public void
         When_the_first_stream_contains_less_answers_than_the_second_one_the_result_is_cut_to_the_length_of_the_first_one()
     {
-        Assert.Fail();
+        var expectedAnswers = new StreamOfAnswers(new bool[] { });
+        var subjectAnswers = new StreamOfAnswers(new bool[] { true, true });
+
+        var matchingAnswers = expectedAnswers.CompareTo(subjectAnswers);
+        
+        Assert.IsEmpty(matchingAnswers);
     }
 }

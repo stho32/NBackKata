@@ -29,7 +29,7 @@ public class StreamOfAnswers
 
         for (int i = 0; i < _values.Count; i++)
         {
-            if (theOtherAnswersAsBools.Length >= i)
+            if (theOtherAnswersAsBools.Length <= i)
             {
                 matches.Add(false);
                 continue;
