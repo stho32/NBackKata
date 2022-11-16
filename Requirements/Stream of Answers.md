@@ -1,0 +1,1 @@
+This is something like a list of booleans.
