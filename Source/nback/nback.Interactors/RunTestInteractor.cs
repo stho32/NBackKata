@@ -1,6 +1,7 @@
-﻿using nback.Domain.Tests;
+﻿using nback.Domain;
+using nback.Domain.Tests;
 
-namespace nback.Domain;
+namespace nback.Interactors;
 
 public record RunTestDomainModel(
     bool YouHaveReachedTheEnd,
