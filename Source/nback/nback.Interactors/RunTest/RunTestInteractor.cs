@@ -1,6 +1,7 @@
 ﻿using nback.Domain;
 using nback.Domain.Tests;
 using nback.Domain.Timers;
+using nback.Interactors.RunTest;
 
 namespace nback.Interactors;
 
@@ -38,7 +39,9 @@ public class RunTestInteractor
             _currentStimulus.Value,
             _declarePatternARepetitionIsLoggedIn,
             _declarePatternIsNotARepetitonIsLoggedIn,
-            message
+            message,
+            _streamOfStimuli.Position,
+            _streamOfStimuli.TotalAmount
             );
     }
 

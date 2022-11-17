@@ -10,6 +10,9 @@ public class StreamOfStimuli
         _characterSequence = characterSequence;
     }
 
+    public int Position => _pointer +1;
+    public int TotalAmount => _characterSequence.Length;
+
     public Result<string> GetNextStimulus()
     {
         _pointer += 1;
