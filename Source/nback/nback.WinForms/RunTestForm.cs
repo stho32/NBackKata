@@ -32,7 +32,7 @@ namespace nback.WinForms
                 MessageLabel.Text = domainmodel.Message;
                 PatternDisplay.Text = domainmodel.Stimulus;
                 TestIsRunningLabel.Visible = !domainmodel.YouHaveReachedTheEnd;
-                AbortButton.Text = domainmodel.YouHaveReachedTheEnd ? "Abort" : "Close";
+                AbortButton.Text = domainmodel.YouHaveReachedTheEnd ? "Close" : "Abort";
 
                 PositionLabel.Visible = !domainmodel.YouHaveReachedTheEnd;
                 PositionLabel.Text = domainmodel.Position + "/" + domainmodel.TotalAmountOfStimuli;
@@ -47,6 +47,7 @@ namespace nback.WinForms
         private void AbortButton_Click(object sender, EventArgs e)
         {
             interactor.Abort();
+            Close();
         }
 
         private void RunTestForm_Load(object sender, EventArgs e)
