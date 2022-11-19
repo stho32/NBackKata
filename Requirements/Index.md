@@ -11,7 +11,7 @@
   
 - (R004) There is a [[test-is-completed-dialog]] that pops up, when the test is completed.
 
-- (R004) When the test ends, a [[test-protocol]] is written to the disk containing all details about how the test was performed and what the result was.
+- (R008) When the test ends, a [[test-protocol]] is written to the disk containing all details about how the test was performed and what the result was.
   
 - (R005) After the test the [[Percentage of Correct Answers]] is presented (in the [[test-is-completed-dialog]]).
   
