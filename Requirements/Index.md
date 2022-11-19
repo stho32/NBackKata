@@ -11,8 +11,6 @@
   
 - (R004) There is a [[test-is-completed-dialog]] that pops up, when the test is completed.
 
-- (R008) When the test ends, a [[test-protocol]] is written to the disk containing all details about how the test was performed and what the result was.
-  
 - (R005) After the test the [[Percentage of Correct Answers]] is presented (in the [[test-is-completed-dialog]]).
   
 - (R006) [[The start-dialog]] is the place where you can set all the [[configuration for a test]] and you can start a new test there.
@@ -21,3 +19,4 @@
 	- In the [[test-dialog]] there should be a way to abort the currently running test.
 	- The [[test-is-completed-dialog]] should be presented even when the test is aborted. The  presented results should contain a hint "Test has been aborted after ... stimuli".
 
+- (R008) When the test ends, a [[test-protocol]] is written to the disk containing all details about how the test was performed and what the result was.
