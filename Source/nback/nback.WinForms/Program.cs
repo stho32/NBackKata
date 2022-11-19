@@ -12,18 +12,31 @@ namespace nback.WinForms
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            ConfigurationForTheTest configuration = new ConfigurationForTheTest("Stefan", 1, 2000, 4);
-            StreamOfStimuli streamOfStimuli = new StreamOfStimuli("AABC");
-            ITimer timer = new DefaultTimer();
+            ConfigurationForTheTest? configuration;
+            do
+            {
+                configuration = GetConfiguration();
 
-            var testResult = ExecuteTest(configuration, streamOfStimuli, timer);
-            ShowTestResult(testResult);
+                if (configuration == null)
+                    break;
+
+                var streamOfStimuli = new StreamOfStimuli("AABC");
+                ITimer timer = new DefaultTimer();
+
+                var testResult = ExecuteTest(configuration, streamOfStimuli, timer);
+                ShowTestResult(testResult);
+            } while (true);
 
             //Application.Run(new RunTestForm(configuration, streamOfStimuli, timer));
+        }
+
+        private static ConfigurationForTheTest? GetConfiguration()
+        {
+            using var form = new StartTestForm();
+            form.ShowDialog();
+            return form.ConfigurationForTheTest;
         }
 
         private static void ShowTestResult(TestResultDomainModel testResult)
