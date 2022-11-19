@@ -2,6 +2,7 @@
 using nback.Domain.Tests;
 using nback.Domain.Timers;
 using nback.Interactors.RunTest;
+using nback.Interactors.TestIsCompleted;
 
 namespace nback.Interactors;
 
@@ -98,7 +99,16 @@ public class RunTestInteractor
         var domainModel = CreateDomainModelFromInternalState(string.Empty);
         OnUiChangeNotification(domainModel);
     }
-    
+
+    public TestResultDomainModel GetTestResult()
+    {
+        return TestResultCalculator.GetTestResult(
+            _configurationForTheTest,
+            _streamOfStimuli,
+            _streamOfAnswers
+            );
+    }
+
     private void NextStimulus()
     {
         _declarePatternARepetitionIsLoggedIn = false;

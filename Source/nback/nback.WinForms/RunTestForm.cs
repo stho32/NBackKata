@@ -1,7 +1,9 @@
+using System.Configuration;
 using nback.Domain;
 using nback.Domain.Timers;
 using nback.Interactors;
 using nback.Interactors.RunTest;
+using nback.Interactors.TestIsCompleted;
 
 namespace nback.WinForms
 {
@@ -9,17 +11,24 @@ namespace nback.WinForms
     {
         private RunTestInteractor interactor;
 
-        public RunTestForm()
+        public RunTestForm(
+            ConfigurationForTheTest configuration,
+            StreamOfStimuli streamOfStimuli,
+            ITimer timer
+        )
         {
-            ConfigurationForTheTest configuration = new ConfigurationForTheTest("Stefan", 1, 2000, 2);
-            StreamOfStimuli streamOfStimuli = new StreamOfStimuli("AABC");
-            ITimer timer = new DefaultTimer();
-
             interactor = new RunTestInteractor(configuration, streamOfStimuli, timer);
             interactor.UiChangeNotificationEvent += UiChangeNotificationFromInteractor;
 
             InitializeComponent();
         }
+
+        public RunTestForm()
+        {
+            InitializeComponent();
+        }
+
+        public TestResultDomainModel Result { get; private set; }
 
         private void UiChangeNotificationFromInteractor(RunTestDomainModel domainmodel)
         {
@@ -47,6 +56,7 @@ namespace nback.WinForms
         private void AbortButton_Click(object sender, EventArgs e)
         {
             interactor.Abort();
+            Result = interactor.GetTestResult();
             Close();
         }
 

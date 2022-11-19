@@ -21,4 +21,6 @@ public class StreamOfStimuli
         
         return new Result<string>(true, _characterSequence[_pointer].ToString(), string.Empty);
     }
+
+    public string AllStimuli => _characterSequence;
 }
