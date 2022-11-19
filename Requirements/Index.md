@@ -11,7 +11,7 @@
   
 - (R004) There is a [[test-is-completed-dialog]] that pops up, when the test is completed.
 
-- (R005) After the test the [[Percentage of Correct Answers]] is presented (in the [[test-is-completed-dialog]]).
+- (R005) After the test is completed the [[Percentage of Correct Answers]] is presented (in the [[test-is-completed-dialog]]).
   
 - (R006) [[The start-dialog]] is the place where you can set all the [[configuration for a test]] and you can start a new test there.
   
