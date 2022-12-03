@@ -11,15 +11,31 @@ namespace nback.WinForms
 
         private void StartTestButton_Click(object sender, EventArgs e)
         {
-            ConfigurationForTheTest = new ConfigurationForTheTest(
-                NameOfSubjectTextBox.Text,
-                (int)NNumericUpDown.Value,
-                (int)StimulusDurationInMsNumericUpDown.Value,
-                (int)NumberOfStimuliNumericUpDown.Value);
+            ConfigurationForTheTest =
+                new ConfigurationWithStreamGenerator(
+                    new ConfigurationForTheTest(
+                        NameOfSubjectTextBox.Text,
+                        (int)NNumericUpDown.Value,
+                        (int)StimulusDurationInMsNumericUpDown.Value,
+                        (int)NumberOfStimuliNumericUpDown.Value),
+                    GetStreamOfStimuliGenerator());
 
             Close();
         }
 
-        public ConfigurationForTheTest? ConfigurationForTheTest = null;
+        private IStreamOfStimuliGenerator GetStreamOfStimuliGenerator()
+        {
+            return (StreamOfStimuliOriginDropDown.SelectedValue as IStreamOfStimuliGenerator)!;
+        }
+
+        public ConfigurationWithStreamGenerator? ConfigurationForTheTest = null;
+
+        private void StartTestForm_Load(object sender, EventArgs e)
+        {
+            var listOfGenerators = new List<IStreamOfStimuliGenerator>();
+            listOfGenerators.Add(new FixedStreamOfStimuliGenerator("TLHCHSCCQLCKLHCQTRRKCHR"));
+
+            StreamOfStimuliOriginDropDown.DataSource = listOfGenerators;
+        }
     }
 }

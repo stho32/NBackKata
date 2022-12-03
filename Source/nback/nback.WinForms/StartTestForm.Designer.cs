@@ -37,6 +37,8 @@
             this.NumberOfStimuliLabel = new System.Windows.Forms.Label();
             this.NumberOfStimuliNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.StartTestButton = new System.Windows.Forms.Button();
+            this.StreamOfStimuliOriginDropDown = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StimulusDurationInMsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfStimuliNumericUpDown)).BeginInit();
@@ -56,7 +58,7 @@
             this.NameOfSubjectTextBox.Location = new System.Drawing.Point(42, 44);
             this.NameOfSubjectTextBox.Name = "NameOfSubjectTextBox";
             this.NameOfSubjectTextBox.Size = new System.Drawing.Size(273, 23);
-            this.NameOfSubjectTextBox.TabIndex = 1;
+            this.NameOfSubjectTextBox.TabIndex = 0;
             // 
             // NNumericUpDown
             // 
@@ -73,7 +75,7 @@
             0});
             this.NNumericUpDown.Name = "NNumericUpDown";
             this.NNumericUpDown.Size = new System.Drawing.Size(51, 23);
-            this.NNumericUpDown.TabIndex = 2;
+            this.NNumericUpDown.TabIndex = 1;
             this.NNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -101,7 +103,7 @@
             // StimulusDurationInMsNumericUpDown
             // 
             this.StimulusDurationInMsNumericUpDown.Increment = new decimal(new int[] {
-            100,
+            1000,
             0,
             0,
             0});
@@ -118,10 +120,11 @@
             0});
             this.StimulusDurationInMsNumericUpDown.Name = "StimulusDurationInMsNumericUpDown";
             this.StimulusDurationInMsNumericUpDown.Size = new System.Drawing.Size(273, 23);
-            this.StimulusDurationInMsNumericUpDown.TabIndex = 4;
+            this.StimulusDurationInMsNumericUpDown.TabIndex = 2;
+            this.StimulusDurationInMsNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.StimulusDurationInMsNumericUpDown.ThousandsSeparator = true;
             this.StimulusDurationInMsNumericUpDown.Value = new decimal(new int[] {
-            1000,
+            4000,
             0,
             0,
             0});
@@ -145,7 +148,8 @@
             0});
             this.NumberOfStimuliNumericUpDown.Name = "NumberOfStimuliNumericUpDown";
             this.NumberOfStimuliNumericUpDown.Size = new System.Drawing.Size(273, 23);
-            this.NumberOfStimuliNumericUpDown.TabIndex = 6;
+            this.NumberOfStimuliNumericUpDown.TabIndex = 3;
+            this.NumberOfStimuliNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NumberOfStimuliNumericUpDown.ThousandsSeparator = true;
             this.NumberOfStimuliNumericUpDown.Value = new decimal(new int[] {
             4,
@@ -155,19 +159,39 @@
             // 
             // StartTestButton
             // 
-            this.StartTestButton.Location = new System.Drawing.Point(478, 128);
+            this.StartTestButton.Location = new System.Drawing.Point(478, 178);
             this.StartTestButton.Name = "StartTestButton";
             this.StartTestButton.Size = new System.Drawing.Size(116, 23);
-            this.StartTestButton.TabIndex = 8;
+            this.StartTestButton.TabIndex = 5;
             this.StartTestButton.Text = "Start Test";
             this.StartTestButton.UseVisualStyleBackColor = true;
             this.StartTestButton.Click += new System.EventHandler(this.StartTestButton_Click);
+            // 
+            // StreamOfStimuliOriginDropDown
+            // 
+            this.StreamOfStimuliOriginDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StreamOfStimuliOriginDropDown.FormattingEnabled = true;
+            this.StreamOfStimuliOriginDropDown.Location = new System.Drawing.Point(42, 143);
+            this.StreamOfStimuliOriginDropDown.Name = "StreamOfStimuliOriginDropDown";
+            this.StreamOfStimuliOriginDropDown.Size = new System.Drawing.Size(552, 23);
+            this.StreamOfStimuliOriginDropDown.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Steam Of Stimuli Origin";
             // 
             // StartTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 183);
+            this.ClientSize = new System.Drawing.Size(640, 213);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.StreamOfStimuliOriginDropDown);
             this.Controls.Add(this.StartTestButton);
             this.Controls.Add(this.NumberOfStimuliLabel);
             this.Controls.Add(this.NumberOfStimuliNumericUpDown);
@@ -179,6 +203,7 @@
             this.Controls.Add(this.NameOfSubjectLabel);
             this.Name = "StartTestForm";
             this.Text = "StartTestForm";
+            this.Load += new System.EventHandler(this.StartTestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StimulusDurationInMsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfStimuliNumericUpDown)).EndInit();
@@ -198,5 +223,7 @@
         private Label NumberOfStimuliLabel;
         private NumericUpDown NumberOfStimuliNumericUpDown;
         private Button StartTestButton;
+        private ComboBox StreamOfStimuliOriginDropDown;
+        private Label label1;
     }
 }

@@ -40,4 +40,9 @@ public class StreamOfAnswers
 
         return matches.ToArray();
     }
+
+    public override string ToString()
+    {
+        return _values.ToArray().ToHumanReadableString("J", "N");
+    }
 }

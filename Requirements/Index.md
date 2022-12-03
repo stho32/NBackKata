@@ -19,4 +19,6 @@
 	- In the [[test-dialog]] there should be a way to abort the currently running test.
 	- The [[test-is-completed-dialog]] should be presented even when the test is aborted. The  presented results should contain a hint "Test has been aborted after ... stimuli".
 
+- (R009) [[Stream of Stimuli Generation]]
+
 - (R008) When the test ends, a [[test-protocol]] is written to the disk containing all details about how the test was performed and what the result was.

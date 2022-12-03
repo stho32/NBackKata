@@ -23,4 +23,11 @@ public class StreamOfStimuli
     }
 
     public string AllStimuli => _characterSequence;
+
+    public override string ToString()
+    {
+        if (_pointer > -1)
+            return _characterSequence.Substring(0, _pointer);
+        return _characterSequence;
+    }
 }

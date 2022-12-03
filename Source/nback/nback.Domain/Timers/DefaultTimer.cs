@@ -25,11 +25,13 @@ public class DefaultTimer : ITimer
 
     public void Start()
     {
-        _systemTimer.Enabled = true;
+        if (_systemTimer != null)
+            _systemTimer.Enabled = true;
     }
 
     public void Stop()
     {
-        _systemTimer.Enabled = false;
+        if (_systemTimer != null)
+            _systemTimer.Enabled = false;
     }
 }

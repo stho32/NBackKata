@@ -17,22 +17,25 @@ namespace nback.WinForms
             ConfigurationForTheTest? configuration;
             do
             {
-                configuration = GetConfiguration();
+                var configWithStreamGenerator = GetConfiguration();
 
-                if (configuration == null)
+                if (configWithStreamGenerator == null)
                     break;
 
-                var streamOfStimuli = new StreamOfStimuli("AABC");
+                configuration = configWithStreamGenerator.Configuration;
+                
+                var streamOfStimuli = configWithStreamGenerator.
+                    StreamOfStimuliGenerator.
+                    Generate(configuration.NumberOfStimuli);
+
                 ITimer timer = new DefaultTimer();
 
                 var testResult = ExecuteTest(configuration, streamOfStimuli, timer);
                 ShowTestResult(testResult);
             } while (true);
-
-            //Application.Run(new RunTestForm(configuration, streamOfStimuli, timer));
         }
 
-        private static ConfigurationForTheTest? GetConfiguration()
+        private static ConfigurationWithStreamGenerator? GetConfiguration()
         {
             using var form = new StartTestForm();
             form.ShowDialog();
